@@ -15,6 +15,7 @@ public:
 
     T* get(int index);
     void push(T* element);
+    void push(T element);
     void remove(int index);
 
     T* find(bool (*finder)(T*));

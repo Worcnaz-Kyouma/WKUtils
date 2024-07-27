@@ -31,11 +31,18 @@ template <typename T>
 void Vector<T>::push(T* element) {
     T copiedElement = *element;
 
-    delete this->array;
+    T** oldArray = this->array;
 
     this->array = Utils::addNewElementToArray(this->array, this->size, &copiedElement);
     
+    delete oldArray;
+
     this->size++;
+}
+
+template <typename T>
+void Vector<T>::push(T element) {
+    this->push(&element);
 }
 
 template <typename T>
@@ -51,8 +58,11 @@ void Vector<T>::remove(int index) {
         if(c == index) continue;
 
         newArray[i] = this->array[i];
-        i++
+        i++;
     }
+
+    delete this->array;
+    this->array = newArray;
 
     this->size--;
 }

@@ -1,0 +1,4 @@
+bin
+build
+app/test/*.o
+app/test/*.exe

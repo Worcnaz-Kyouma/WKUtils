@@ -10,6 +10,7 @@ private:
     int size;
 
 public:
+    Vector();
     Vector(T** startingArray, int startingSize);
 
     T* get(int index);
